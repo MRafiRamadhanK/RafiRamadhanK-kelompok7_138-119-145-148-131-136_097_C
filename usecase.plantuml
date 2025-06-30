@@ -1,0 +1,40 @@
+@startuml website komputer
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Pengunjung" as user
+actor "Admin" as admin
+
+rectangle "toko komputer" {
+  user --> (Buat Akun)
+  user --> (Login)
+  (Buat Akun) ..> (Login) :<<include>>
+  Login <.. (Produk) :<<extends>>
+  Login <.. (lihat promo) :<<extends>>
+  Login <.. (Kontak) :<<extends>>
+  Login <.. (logout) :<<extends>>
+  Login <.. (Keranjang) :<<extends>>
+  (Produk) <.. (Add to Cart) :<<extends>>
+  (Produk) <.. (Beli Sekarang) :<<extends>>
+  (Keranjang) <.. (edit Keranjang):<<extends>>
+  (Keranjang) <.. (Hapus Keranjang):<<extends>>
+  (Kontak)<..(Kirim Pesan):<<extends>>
+
+
+  admin --> (Login admin)
+  (Login admin) ..> (Dasbord Manajemen) :<<include>>
+  (Dasbord Manajemen) <.. (Manajemen Produk) :<<extends>>
+  (Dasbord Manajemen) <.. (logout admin) :<<extends>>
+  (Manajemen Produk) <.. (Tambah Produk) :<<extends>>
+  (Manajemen Produk) <.. (Hapus Produk) :<<extends>>
+  (Manajemen Produk) <.. (Ubah Produk) :<<extends>>
+  (Dasbord Manajemen) <.. (Manajemen pengguna) :<<extends>>
+  (Dasbord Manajemen)<..(Pesan masuk): <<extends>>
+  (Dasbord Manajemen)<..(Manajemen pesanan): <<extends>>
+  (Manajemen pesanan)<..(Melihat Pesanan):<<extends>>
+  (Manajemen pesanan)<..(Menghapus Pesanan):<<extends>>
+  (Manajemen pengguna)<..(Menghapus pengguna):<<extends>>
+  (Pesan masuk)<..(Menghapus Pesan):<<extends>>
+}
+@enduml

@@ -1,0 +1,195 @@
+<!DOCTYPE html> <!-- Deklarasi tipe dokumen HTML5 -->
+<html lang="id"> <!-- Awal dokumen HTML, bahasa Indonesia -->
+<head>
+    <meta charset="UTF-8"> <!-- Set karakter encoding ke UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+    <title>Beranda - Toko Part Komputer</title> <!-- Judul halaman di tab browser -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Link ke file CSS utama -->
+    <link rel="stylesheet" href="css/home.css"> <!-- Link ke file CSS khusus halaman home -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> <!-- Bootstrap Icons -->
+</head>
+<body>
+    <header> <!-- Awal header -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #0400ff 0%, #9d50bb 60%);" display = "flex">
+        <div class="container"> <!-- Container navbar -->
+            <div class="logo-container"> <!-- Container logo -->
+                <img src="img/logo.png" alt="Toko Part Komputer Logo" class="logo"> <!-- Logo toko -->
+                <a class="navbar-brand" href="index.html">Toko Part Komputer</a> <!-- Nama toko, link ke beranda -->
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span> <!-- Icon hamburger untuk mobile -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- Menu navigasi yang bisa collapse -->
+                <ul class="navbar-nav ms-auto"> <!-- Daftar menu navigasi, rata kanan -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a> <!-- Link ke beranda -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produk.html">Produk</a> <!-- Link ke halaman produk -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontak.html">Kontak</a> <!-- Link ke halaman kontak -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="checkout.html">
+                            <i class="bi bi-cart-fill"></i> Keranjang <!-- Icon keranjang -->
+                            <span id="cart-count" class="badge bg-danger">0</span> <!-- Jumlah item di keranjang -->
+                        </a>
+                    </li>
+                    <li class="nav-item" id="authContainer">
+                        <!-- Container untuk tombol login/logout, diisi oleh JS -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header> <!-- Akhir header -->
+
+    <section id="home"> <!-- Section hero/banner utama -->
+        <div class="hero-content"> <!-- Container konten hero -->
+            <div class="hero-text"> <!-- Teks utama hero -->
+                <h2>Solusi Lengkap Kebutuhan Komputer Anda</h2> <!-- Judul hero -->
+                <p>Dapatkan komponen komputer berkualitas dengan harga terbaik dan garansi resmi.</p> <!-- Deskripsi hero -->
+                <button id="promoBtn">Lihat Promo Hari Ini</button> <!-- Tombol promo, buka modal promo -->
+                <a href="produk.html" class="secondary-btn">Jelajahi Produk</a> <!-- Tombol ke halaman produk -->
+            </div>
+            <div class="hero-image"> <!-- Gambar hero -->
+                <img src="https://staticg.sportskeeda.com/editor/2022/01/5f21e-16433417948778-1920.jpg" alt="Komputer Gaming High-End">
+            </div>
+        </div>
+    </section>
+
+    <section class="features"> <!-- Section fitur keunggulan toko -->
+        <h2>Mengapa Memilih Kami?</h2> <!-- Judul fitur -->
+        <div class="feature-container"> <!-- Container fitur -->
+            <div class="feature"> <!-- Fitur 1 -->
+                <img src="https://th.bing.com/th/id/OIP.RuYLq_Yfcc3fEm2MxZ55gQHaGl?w=195&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Garansi">
+                <h3>Garansi Resmi</h3>
+                <p>Semua produk kami bergaransi resmi dari distributor</p>
+            </div>
+            <div class="feature"> <!-- Fitur 2 -->
+                <img src="https://th.bing.com/th/id/OIP.v7a0SIL77Ek1Bh4Ju85ogQHaE8?w=270&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Pengiriman">
+                <h3>Pengiriman Cepat</h3>
+                <p>Pesanan dikirim hari yang sama sebelum jam 3 sore</p>
+            </div>
+            <div class="feature"> <!-- Fitur 3 -->
+                <img src="https://th.bing.com/th/id/OIP.RaD7iPNuhqAMMmuVL9X7OAHaEK?w=278&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Support">
+                <h3>Support 24/7</h3>
+                <p>Tim teknisi siap membantu kapan saja</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light"> <!-- Section produk terbaru dengan carousel -->
+        <div class="container">
+            <h2 class="text-center mb-4" style="color: #6e48aa;">Produk Terbaru</h2>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel"> <!-- Carousel produk -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active"> <!-- Slide pertama aktif -->
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="https://th.bing.com/th/id/OIP.BzL1wS1AW9Wgy3sUoqBX9AHaHa?w=188&h=188&c=7&r=0&o=5&dpr=1.1&pid=1.7" class="card-img-top" alt="Intel Core i9">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Intel Core i9-13900K</h5>
+                                        <p class="card-text">Prosesor 24-core 32-thread 5.8GHz</p>
+                                        <span class="text-danger fw-bold">Rp 9.999.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="https://th.bing.com/th/id/OIP.U6kN_ZgONhhUGC7OKfmMegHaEI?rs=1&pid=ImgDetMain" class="card-img-top" alt="RTX 4090">
+                                    <div class="card-body">
+                                        <h5 class="card-title">NVIDIA RTX 4090</h5>
+                                        <p class="card-text">24GB GDDR6X 384-bit</p>
+                                        <span class="text-danger fw-bold">Rp 32.500.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="https://images.stockx.com/images/NVIDIA-GIGABYTE-GeForce-RTX-5090-AORUS-MASTER-ICE-32G-GDDR7-Graphics-Card-GV-N5090AORUSM-ICE-32GD-White.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1739222725n" class="card-img-top" alt="RTX 5090">
+                                    <div class="card-body">
+                                        <h5 class="card-title">NVIDIA RTX 5090</h5>
+                                        <p class="card-text">32GB GDDR7 384-bit</p>
+                                        <span class="text-danger fw-bold">Rp 32.500.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item"> <!-- Slide kedua -->
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="https://nguyencongpc.vn/media/product/18831-asus-rog-strix-geforce-rtx-3090-oc-white-edition-4.jpg" class="card-img-top" alt="RTX 3090">
+                                    <div class="card-body">
+                                        <h5 class="card-title">NVIDIA RTX 3090</h5>
+                                        <p class="card-text">24GB GDDR6X 384-bit</p>
+                                        <span class="text-danger fw-bold">Rp 29.500.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="https://th.bing.com/th/id/OIP.8qG8pTxVdT-n0Ck3uTurCQHaHa?rs=1&pid=ImgDetMain" class="card-img-top" alt="RTX 4070 Ti Super">
+                                    <div class="card-body">
+                                        <h5 class="card-title">NVIDIA RTX 4070 Ti Super</h5>
+                                        <p class="card-text">16GB GDDR6 384-bit</p>
+                                        <span class="text-danger fw-bold">Rp 26.500.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <img src="https://th.bing.com/th/id/OIP.RuYLq_Yfcc3fEm2MxZ55gQHaGl?w=195&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" class="card-img-top" alt="Garansi">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Garansi Resmi</h5>
+                                        <p class="card-text">Semua produk kami bergaransi resmi dari distributor</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer> <!-- Awal footer -->
+        <div class="footer-content"> <!-- Konten utama footer -->
+            <div class="footer-section">
+                <h3>Tentang Kami</h3>
+                <p>Toko Part Komputer telah berdiri sejak 2025 dan menjadi pilihan utama para pecinta teknologi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Sabtu: 09.00 - 21.00<br>Minggu: 10.00 - 17.00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hubungi Kami</h3>
+                <p>Email: info@tokopartkomputer.com<br>Telp: 081211222950</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Toko Part Komputer. Semua Hak Dilindungi.</p>
+        </div>
+    </footer> <!-- Akhir footer -->
+
+    <script src="app.js"></script> <!-- Script utama frontend -->
+    <script src="auth.js"></script> <!-- Script autentikasi user/admin -->
+    <script src="cart.js"></script> <!-- Script keranjang belanja -->
+    <script src="product-management.js"></script> <!-- Script manajemen produk (admin) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+</body>
+</html>

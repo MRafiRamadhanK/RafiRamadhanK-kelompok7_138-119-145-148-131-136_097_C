@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checkout - Toko Part Komputer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/produk.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        .checkout-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .cart-summary, .customer-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+            margin-left: 1rem;
+        }
+        .cart-item button {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: .5rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: .5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #0400ff 0%, #9d50bb 60%);">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Toko Part Komputer</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                        <li class="nav-item" id="authContainer"></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="checkout.html">
+                                <i class="bi bi-cart"></i> Keranjang <span id="cart-count" class="badge bg-danger">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <h2>Checkout</h2>
+        <div class="checkout-container">
+            <div class="cart-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <div id="cart-items-container"></div>
+
+                <!-- Tombol hapus semua -->
+                <button class="btn btn-outline-danger btn-sm my-3" onclick="clearCart()">Hapus Semua Item</button>
+
+                <hr>
+                <h4>Total: <span id="cart-total">Rp 0</span></h4>
+            </div>
+
+            <div class="customer-form">
+                <h3>Detail Pengiriman</h3>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat Lengkap</label>
+                        <textarea id="address" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Buat Pesanan</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 bg-light">
+        <p>&copy; 2025 Toko Part Komputer. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
